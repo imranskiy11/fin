@@ -10,26 +10,18 @@ class HeadTail:
         
         self.sequence = sequence
         
-        self._build_struct(sequence)
-        
-        
-        
-        
-    def _build_struct(self, sequence):
         self.head = sequence[:self.head_size]
         self.tail = sequence[-self.tail_size:]
-        
-        
+   
     def show_plot(
         self, head=True, tail=True, window_show=True, head_color='g', tail_color='r',):
-        # """
-        # # colors:
-        # # ‘b’ blue,   ‘g’ green, ‘r’ red
-        # # ‘c’ cyan,   ‘m’ magenta
-        # # ‘y’ yellow, ‘k’ black, ‘w’ white
+        """
+        # colors:
+        # ‘b’ blue,   ‘g’ green, ‘r’ red
+        # ‘c’ cyan,   ‘m’ magenta
+        # ‘y’ yellow, ‘k’ black, ‘w’ white
         
-        # """
-        print('sequence plot')
+        """
         if head:
             plot(np.arange(0, self.head_size), 
                  self.head, 
@@ -39,7 +31,7 @@ class HeadTail:
                 np.arange(self.head_size - 1, self.head_size + self.tail_size), 
                 self.sequence[self.head_size - 1 : self.head_size + self.tail_size],
                 color=tail_color)
-
         if window_show:
             show()
-# if __name__ == '__main__':
+if __name__ == '__main__':
+    pass
