@@ -8,6 +8,7 @@ def get_sequence(
     """ Get pandas series slice from current dataframe"""
     
     return df[col_name][start_point:end_point].values
+    
 
 if __name__ == '__main__':
     print()

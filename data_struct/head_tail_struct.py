@@ -17,6 +17,13 @@ class HeadTail:
     
     @property
     def tail_conclusion(self):
+        """
+        the result of the behavior of the tail relative to the end of the head
+        (growth, fall or unchanged)
+        growth    : 1
+        fall      : 0
+        unchanged : None
+        """
         if abs(self.tail[-1] - self.tail[0]) < self.change_value:
             return None
         if self.tail[-1] - self.tail[0] >= self.change_value:
@@ -25,15 +32,23 @@ class HeadTail:
             return 0
 
     def set_change_value(self, change_value):
+        """
+        set the threshold value for the final result 
+        (growth, fall or unchanged)
+        """
         self.change_value = change_value
+        
+    @property
+    def get_change_value(self):
+        return self.change_value
    
     def show_plot(
-        self, head=True, tail=True, window_show=True, head_color='g', tail_color='r',):
+        self, head=True, tail=True, head_color='g', tail_color='r',):
         """
         # colors:
-        # ‘b’ blue,   ‘g’ green, ‘r’ red
-        # ‘c’ cyan,   ‘m’ magenta
-        # ‘y’ yellow, ‘k’ black, ‘w’ white
+        # 'b' blue,   'g' green, 'r' red
+        # 'c' cyan,   'm' magenta
+        # 'y' yellow, 'k' black, 'w' white
         
         """
         if head:
@@ -45,7 +60,8 @@ class HeadTail:
                 np.arange(self.head_size - 1, self.head_size + self.tail_size), 
                 self.sequence[self.head_size - 1 : self.head_size + self.tail_size],
                 color=tail_color)
-        if window_show:
-            show()
+        show()
+            
+            
 if __name__ == '__main__':
     pass
