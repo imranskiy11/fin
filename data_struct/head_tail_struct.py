@@ -41,6 +41,12 @@ class HeadTail:
     @property
     def get_change_value(self):
         return self.change_value
+        
+        
+    def __define_change_value__(self):
+        """ set default change value """
+        return 1
+    
    
     def show_plot(
         self, head=True, tail=True, head_color='g', tail_color='r',):

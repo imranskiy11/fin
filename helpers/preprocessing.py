@@ -46,5 +46,5 @@ def prep_dataframe(dataframe, inplace=False):
     
     df.drop(['ymd', 'hms', 'EURUSD', 'numdate', 'time'], axis=1, inplace=True)
     
-    df.set_index('index_date', inplace=True
+    df.set_index('index_date', inplace=True)
     return df
